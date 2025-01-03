@@ -15,11 +15,6 @@ SRCDIR	= src
 OBJDIR	= obj
 HEADER	= *.h
 INC		= $(addprefix -I, $(HEADER))
-#DIRS 	= list math memory print string utils
-#SRCDIRS	= $(foreach dir, $(DIRS), $(addprefix $(SRCDIR)/, $(dir)))
-#OBJDIRS	= $(foreach dir, $(DIRS), $(addprefix $(OBJDIR)/, $(dir)))
-#SRC	= $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.c))
-#OBJS	= $(subst $(SRCDIR)/, $(OBJDIR)/, $(SRC:.c=.o))
 SRC		:= $(wildcard $(SRCDIR)/*/*.c)
 OBJS	:= $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 
